@@ -50,3 +50,4 @@
 ### EXAMPLES
 
  * Just run the script and check the /Output folder created.
+   - Python BinLister.py
