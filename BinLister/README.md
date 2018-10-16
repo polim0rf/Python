@@ -19,6 +19,11 @@
   In order to list all files an retrieve the proper information from each one (instead of the $I/$R files), we
   can read the $I file structure which is always the same:
   
+  -  Bytes 0-7      >	  File Header	 >          Always = 1
+  -  Bytes 8-15	    >	  Original file size	 >   Little-endian (HEX)
+  -  Bytes 16-23	  >	  Date of file deletion	 >  Number of seconds since January 1, 1601. 
+  -  Bytes 24-253	  >	  Original file path	 >  String
+
  
 
 ### ROADMAP
