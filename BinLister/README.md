@@ -12,8 +12,8 @@
  - The hidden Recycle Bin file is located at \$Recycle.Bin\%SID%
  - Two files are created when deleting a file: (e.g: Mypicture.png)
    
-   - **$R files** (e.g: $IZY3HAU.png): Contains the file content.
-   - **$I files** (e.g: $RZY3HAU.png): Contains the file information (original path/name, size and date of deletion). 
+   - **$R files** (e.g: $RZY3HAU.png): Contains the file content.
+   - **$I files** (e.g: $IZY3HAU.png): Contains the file information (original path/name, size and date of deletion). 
     All $I files are 544 bytes long
   
   In order to list all files an retrieve the proper information from each one (instead of the $I/$R files), we
