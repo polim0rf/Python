@@ -34,4 +34,4 @@ libraries/wrappers.
 ### EXAMPLES
 
  * Just run the script and check the /Output folder created.
-   - Python PST_Parser.py -pff <location_of_pff_file>
+   - Python PST_Parser.py -pff <location_of_pff_file> -outputcsv ./Output.csv
