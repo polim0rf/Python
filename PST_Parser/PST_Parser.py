@@ -35,24 +35,25 @@ def process_message(msg):
     # Attachments
     attachments = []
     total_attachment_size_bytes = 0
-    if msg.number_of_attachments > 0:
-        for i in range(msg.number_of_attachments):
-            total_attachment_size_bytes = total_attachment_size_bytes + (msg.get_attachment_by_index(i)).size()
-#               # get the content of the attachment file
-            attachments.append(
-                ((msg.attachment(i)).read_buffer((msg.attachment(i)).size())).decode('ascii',
-                                                                                                         errors="ignore"))
+    #To be tuned for attachment analysis. Need pythong bindings for libyal/libpff...
+    #if msg.number_of_attachments > 0:
+    #    for i in range(msg.number_of_attachments):
+            #total_attachment_size_bytes = total_attachment_size_bytes + (msg.get_attachment_by_index(i)).size()
+               # get the content of the attachment file
+            #attachments.append(
+            #    ((msg.attachment(i)).read_buffer((msg.attachment(i)).size())).decode('ascii',
+            #                                                                                             errors="ignore"))
     return {
         "subject": msg.subject,
         "sender": msg.sender_name,
         "header": msg.transport_headers,
         "body": msg.plain_text_body,
-#       "creation_time": msg.creation_time,
-#       "submit_time": msg.client_submit_time,
-#        "delivery_time": msg.delivery_time,
-        "attachment_count": msg.number_of_attachments,
-        "total_attachment_size": total_attachment_size_bytes,
-        "attachments": attachments
+        #"creation_time": msg.creation_time,
+        #"submit_time": msg.client_submit_time,
+        #"delivery_time": msg.delivery_time,
+        #"attachment_count": msg.number_of_attachments,
+        #"total_attachment_size": total_attachment_size_bytes,
+        #"attachments": attachments
     }
 
 
@@ -128,8 +129,8 @@ def write_data(outfile, data_list):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument("pff")
-    parser.add_argument("outputcsv")
+    parser.add_argument("-pff")
+    parser.add_argument("-outputcsv")
     args = parser.parse_args()
 
     #Open OST/PST
